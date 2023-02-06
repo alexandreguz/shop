@@ -1,0 +1,31 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of selectedProducts">
+        <td>product</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+          <td colspan="2"></td>
+          <td><strong>Total: {{ getTotal() }}</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+  <ng-template *ngIf="selectedProducts.length === 0; else filledCart">
+    <p class="alert alert-info">Your cart is empty</p>
+  </ng-template>
+  <ng-template #filledCart>
+  </ng-template>
+  

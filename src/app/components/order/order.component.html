@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header">
+      Order Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Order Date: {{ order.date }}</h5>
+      <p class="card-text">
+        <strong>Buyer Name: </strong> {{ order.buyer.name }} <br>
+        <strong>Address: </strong> {{ order.buyer.address }} <br>
+        <strong>Phone: </strong> {{ order.buyer.phone }}
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of order.items">
+            <td>{{item.product.name}}</td>
+            <td>{{item.product.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h5 class="card-title">Total Amount: {{ order.total }}</h5>
+    </div>
+  </div>
+  
+
+  <div class="card">
+    <div class="card-header">
+      Order Details
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Buyer Information</h5>
+      <p class="card-text">Name: {{"order.name"}}</p>
+      <p class="card-text">Address: {{"order.address"}}</p>
+      <p class="card-text">Phone: {{"order.phone"}}</p>
+      <h5 class="card-title">Order Information</h5>
+      <p class="card-text">Total: {{"order.total"}}</p>
+      <p class="card-text">Date: {{"order.date"}}</p>
+      <p class="card-text">Status: {{"order.status"}}</p>
+    </div>
+  </div>
+  
