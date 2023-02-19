@@ -1,3 +1,4 @@
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -8,8 +9,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of selectedProducts">
-        <td>product</td>
-        <td>{{product.name}}</td>
+        <td>{{product.title}}</td>
         <td>{{product.price}}</td>
         <td>
           <button class="btn btn-danger" (click)="removeProduct(product)">Remove</button>
@@ -18,8 +18,11 @@
     </tbody>
     <tfoot>
       <tr>
-          <td colspan="2"></td>
+          <td colspan="1"></td>
           <td><strong>Total: {{ getTotal() }}</strong></td>
+          <td>
+            <button class="btn btn-success" (click)="orderProduct(selectedProducts)">Order</button>
+          </td>
       </tr>
     </tfoot>
   </table>

@@ -9,6 +9,7 @@ import { OrderComponent } from './components/order/order.component';
 import { FormComponent } from './components/form/form.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './components/login/login.component';
     CheckoutComponent,
     FormComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
 
   ],
   imports: [

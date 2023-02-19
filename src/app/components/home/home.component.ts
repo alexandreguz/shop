@@ -21,7 +21,6 @@ import { Product } from 'src/app/models/product.model';
 })
 export class HomeComponent  implements OnInit {
   products: Product[] = [];
-  username = "Alex"
   title = 'Online Sales Service';
 
   constructor(private checkoutService: CheckoutService,
