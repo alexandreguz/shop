@@ -13,6 +13,7 @@ export class CheckoutService {
   addProduct(product:any) {
     this.selectedProducts.push(product);
     console.log(this.selectedProducts)
+    console.log(this.selectedProducts.length)
   }
 
   removeProduct(product:any) {

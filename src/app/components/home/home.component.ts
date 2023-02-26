@@ -1,18 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CheckoutService } from 'src/app/services/checkout-service.service';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/product.model';
-
-
-// export class FormComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
 
 @Component({
   selector: 'app-home',
@@ -22,6 +12,9 @@ import { Product } from 'src/app/models/product.model';
 export class HomeComponent  implements OnInit {
   products: Product[] = [];
   title = 'Online Sales Service';
+  selectedProducts = []
+
+  @ViewChild("drawer") drawer: any;
 
   constructor(private checkoutService: CheckoutService,
               private router: Router,
@@ -31,14 +24,12 @@ export class HomeComponent  implements OnInit {
   ngOnInit() {
     this.productsService.getProducts().subscribe(response => {
       this.products = response.data;
-      debugger;
     });
   }
 
     buyProduct(products:any) {
-      debugger
       console.log('Comprando:', products);
       this.checkoutService.addProduct(products);
-      this.router.navigate(['home/checkout'])
+      this.drawer.open();
     }
 }

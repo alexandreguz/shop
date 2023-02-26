@@ -1,4 +1,4 @@
-
+<div  *ngIf="selectedProducts.length > 0">
 <table class="table table-striped">
     <thead>
       <tr>
@@ -26,9 +26,5 @@
       </tr>
     </tfoot>
   </table>
-  <ng-template *ngIf="selectedProducts.length === 0; else filledCart">
-    <p class="alert alert-info">Your cart is empty</p>
-  </ng-template>
-  <ng-template #filledCart>
-  </ng-template>
+</div>
   

@@ -1,4 +1,8 @@
-<div class="container">
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position ='end'>
+    <app-checkout *ngIf="products.length > 0"></app-checkout>
+  </mat-drawer>
+  <div class="container">
     <h1>{{title}}</h1>
     <div class="row">
       <div class="col-md-4" *ngFor="let product of products">
@@ -12,10 +16,4 @@
       </div>
     </div>
   </div>
-
-  
-<router-outlet></router-outlet>
-
-
-  
-
+</mat-drawer-container>
