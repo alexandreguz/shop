@@ -11,7 +11,6 @@ import { Product } from 'src/app/models/product.model';
 })
 export class HomeComponent  implements OnInit {
   products: Product[] = [];
-  title = 'Online Sales Service';
   selectedProducts = []
 
   @ViewChild("drawer") drawer: any;

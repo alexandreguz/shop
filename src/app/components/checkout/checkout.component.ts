@@ -18,7 +18,6 @@ import { CheckoutService } from 'src/app/services/checkout-service.service';
 
     constructor(private checkoutService: CheckoutService) {
       this.selectedProducts = this.checkoutService.getSelectedProducts();
-      debugger
     }
   
     removeProduct(product:any) {
