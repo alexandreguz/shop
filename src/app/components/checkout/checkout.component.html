@@ -1,4 +1,5 @@
-<div  *ngIf="selectedProducts.length > 0">
+<div *ngIf="selectedProducts.length == 0"> No Products </div>
+<div *ngIf="selectedProducts.length > 0">
 <table class="table table-striped">
     <thead>
       <tr>

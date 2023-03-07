@@ -6,12 +6,6 @@ import { CheckoutService } from 'src/app/services/checkout-service.service';
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-// export class CheckoutComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
 
   export class CheckoutComponent {
     selectedProducts: any = [];
