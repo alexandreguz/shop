@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CheckoutService } from 'src/app/services/checkout-service.service';
+import { CheckoutService } from 'src/app/services/checkout.service';
 import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/product.model';

@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { OrderDetails } from '../models/order.model';
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +10,9 @@ import { Injectable } from '@angular/core';
 export class CheckoutService {
   
   selectedProducts :any[] = [];
+  private baseUrl = 'http://localhost:3002/api/orders';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
   addProduct(product:any) {
@@ -29,5 +34,12 @@ export class CheckoutService {
     return this.selectedProducts;
   }
 
+  orderSelectedProducts(products: any[]): Observable<any> {
+    // console.log("ordered", products)
+    let products_id_list = products.map(product => product.id)
+
+    return this.http.post(`${this.baseUrl}`, products_id_list);
+    
+  }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CheckoutService } from 'src/app/services/checkout-service.service';
+import { CheckoutService } from 'src/app/services/checkout.service';
 
 @Component({
   selector: 'app-checkout',
@@ -29,8 +29,9 @@ import { CheckoutService } from 'src/app/services/checkout-service.service';
       this.productAdded
     }
 
-    orderProduct(product:string){
-      console.log("product ordered")
+    orderProduct(product:any){
+      console.log("product ordered", product)
+      this.checkoutService.orderSelectedProducts(product).subscribe()
     }
 
 }
